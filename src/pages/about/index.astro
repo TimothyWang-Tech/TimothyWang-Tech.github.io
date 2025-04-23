@@ -1,0 +1,309 @@
+---
+import { Comment } from 'astro-pure/advanced'
+import { Button, Collapse, Spoiler, Timeline } from 'astro-pure/user'
+import PageLayout from '@/layouts/CommonPage.astro'
+import Substats from '@/components/about/Substats.astro'
+import ToolSection from '@/components/about/ToolSection.astro'
+
+const headings = [
+  { depth: 2, slug: 'Xili Wang', text: 'Xili Wang' },
+  { depth: 2, slug: 'projects', text: 'Projects' },
+  { depth: 2, slug: 'education', text: 'Education' },
+  { depth: 2, slug: 'award', text: 'Award' },
+  { depth: 2, slug: 'skills and tools', text: 'Skills and Tools' },
+  { depth: 2, slug: 'social-networks', text: 'Social Networks' },
+  { depth: 2, slug: 'gossips', text: 'Gossips' }
+]
+---
+
+<PageLayout title='About' {headings} info='/about'>
+  {/* Xili Wang */}
+  <h2 id='Xili Wang'>Xili Wang</h2>
+  <p>Student / Reseacher</p>
+
+<div class="about-container">
+  <div class="about-image-wrapper">
+  <img src="/images/test2.jpg" id="profile-image" alt="wang" class="about-image-wrapper" loading="lazy" width="450" height="450" decoding="async">
+  </div>
+  <div class="about-text">
+    <p>
+      Hi there! 👋 I'm Xili Wang (王熙理), an undergraduate student at the <a href="https://eecs.pku.edu.cn/xxkxjsxy/Home/HOME.htm" target="_blank" data-astro-cid-fwdcsva6="">School of EECS</a>, 
+      <a href="https://www.pku.edu.cn/en/" target="_blank">Peking University</a>, majoring in Applied Physics (Experimental Class of Electronic Information Science).
+    </p>
+    <p>
+      I have a passion for Piezoelectric and Acoustic Microelectromechanical Systems (MEMS), supervised by 
+      <a href="http://lulab.pku.edu.cn/" target="_blank">Prof. Yipeng Lu</a> at the 
+      <a href="https://ic.pku.edu.cn/en/" target="_blank">School of Integrated Circuit</a>, Peking University.
+    </p>
+  </div>
+</div>
+<style>
+  .about-container {
+    display: flex; /* 使用 flexbox 布局 */
+    align-items: center; /* 垂直居中对齐 */
+  }
+
+  .about-image-wrapper {
+    margin-right: 20px; /* 给图片和文字之间加点间距 */
+  }
+
+  .about-text {
+    font-size: 16px; /* 文字大小 */
+    line-height: 1.5; /* 行间距 */
+  }
+
+  .about-text a {
+    color: #2ca5e0; /* 链接颜色/ */
+    text-decoration: none; /* 去掉链接下划线 */
+  }
+
+  .about-text a:hover {
+    text-decoration: underline; /* 鼠标悬停时显示下划线 */
+  }
+</style>
+
+  <p>
+      My research interest includes the design, fabrication and characterization of piezoelectric micromachined ultrasonic transducers (PMUTs) and analog/mixed-signal integrated circuits design.
+  </p>
+  <p>
+      Do not hesitate to contact me if you have any queries : )
+  </p>
+
+  <div class="about-text">
+  <p>
+  <a href="mailto:timothy.wxl@gmail.com" target="_blank" data-astro-cid-fwdcsva6="">Email</a>
+  &nbsp;|&nbsp;
+  <a href="https://scholar.google.com" target="_blank" data-astro-cid-fwdcsva6="">Google Scholar</a>
+  &nbsp;|&nbsp;
+  <a href="https://github.com/TimothyWang-Tech" target="_blank" data-astro-cid-fwdcsva6="">Linkedin</a>
+  &nbsp;|&nbsp;
+  <a href="https://github.com/TimothyWang-Tech" target="_blank" data-astro-cid-fwdcsva6="">GitHub</a>
+  </p>
+  </div>
+<style>
+  .about-text {
+    font-size: 16px; /* 文字大小 */
+    line-height: 1.5; /* 行间距 */
+  }
+
+  .about-text a {
+    color: #2ca5e0; /* 链接颜色/ */
+    text-decoration: none; /* 去掉链接下划线 */
+  }
+
+  .about-text a:hover {
+    text-decoration: underline; /* 鼠标悬停时显示下划线 */
+  }
+</style>
+
+
+
+
+  {/*
+  <p>My motto: Stay hungry, Stay foolish. <Spoiler>这里可以夹私货</Spoiler></p>
+  <Button title='Sponsor Me' class='w-fit' href='/projects#sponsorship' style='ahead' />
+  */}
+
+  <h2 id='projects'>Projects</h2>
+  <div class="about-text">
+  <p>
+  Please visit my
+  <a href="/projects" data-astro-cid-fwdcsva6="">projects page</a>!
+  </p>
+  </div>
+  <style>
+  .about-text {
+    font-size: 16px; /* 文字大小 */
+    line-height: 1.5; /* 行间距 */
+  }
+
+  .about-text a {
+    color: #2ca5e0; /* 链接颜色/ */
+    text-decoration: none; /* 去掉链接下划线 */
+  }
+
+  .about-text a:hover {
+    text-decoration: underline; /* 鼠标悬停时显示下划线 */
+  }
+</style>
+
+  <h2 id='education'>Education</h2>
+  <Timeline
+    events={[
+      {
+        date: 'Sep 2023 - Jul 2027',
+        content:
+          '🎓 <a href="https://pku.edu.cn" target="_blank">Peking University</a>'
+      },
+      {
+        date: 'Sep 2017 - Jul 2023',
+        content:
+          '🏫 <a href="https://www.msannu.cn/" target="_blank">High School attached to Northeast Normal University</a>'
+      }
+    ]}
+  />
+
+  <h2 id='award'>Award</h2>
+  <Timeline
+    events={[
+      {
+        date: '2023 - 2024',
+        content:
+          '🎓 <a href="https://eecs.pku.edu.cn/info/1040/6773.htm" target="_blank">Experimental Class of Electronic Information Science Academic Scholarship</a>'
+      }
+    ]}
+  />
+  
+  {/* general-talk 
+  <h2 id='hobbies'>Hobbies</h2>
+  <ul>
+    <li>Lorem ipsum dolor sit amet, vidit suscipit at mei.</li>
+    <li>
+      Quem denique mea id. Usu ei regione indoctum dissentiunt, cu meliore fuisset mei, vel quod
+      voluptua ne.
+    </li>
+    <li>Ex dicat impedit mel, at eum oratio possit voluptatum.</li>
+    <li>Impetus fuisset ullamcorper pri cu, his posse iisque ad, aliquam honestatis usu id.</li>
+  </ul>
+  */}
+
+  {/* tools */}
+  <h2 id='skills and tools'>Skills and Tools</h2>
+  <ToolSection
+    class='mb-5'
+    title='Language'
+    tools={[
+      {
+        name: 'C',
+        description: 'Programming Language',
+        href: 'https://www.c-language.org/',
+        icon: import('@/assets/tools/file-type-c.svg?raw')
+      },
+      {
+        name: 'C++',
+        description: 'Programming Language',
+        href: 'https://isocpp.org/',
+        icon: import('@/assets/tools/file-type-cpp2.svg?raw')
+      },
+      {
+        name: 'Python',
+        description: 'Programming Language',
+        href: 'https://www.python.org/',
+        icon: import('@/assets/tools/python.svg?raw')
+      },
+      {
+        name: 'Verilog',
+        description: 'Hardware Description Language',
+        href: 'https://www.verilog.com/',
+        icon: import('@/assets/tools/file-type-verilog.svg?raw')
+      },
+      {
+        name: 'Latex',
+        description: 'Paper & Homework Writing',
+        href: 'https://www.latex-project.org/',
+        icon: import('@/assets/tools/LaTeX.svg?raw')
+      },
+      {
+        name: 'Markdown',
+        description: 'Docs & Blog Wrting',
+        href: 'https://www.markdownguide.org/',
+        icon: import('@/assets/tools/file-type-markdown.svg?raw')
+      }
+    ]}
+  />
+  <ToolSection
+    class='mb-5'
+    title='Devlopment Tools'
+    tools={[
+      {
+        name: 'Matlab',
+        description: 'Numeric Computing Platform',
+        href: 'https://www.mathworks.com/products/matlab.html',
+        icon: import('@/assets/tools/MATLAB.svg?raw')
+      },
+      {
+        name: 'COMSOL Multiphysics',
+        description: 'Software for Multiphysics Simulation',
+        href: 'https://www.comsol.com/',
+        icon: import('@/assets/tools/Comsol.svg?raw')
+      },
+      {
+        name: 'Candence Virtuoso',
+        description: 'Electronic Design Automation (EDA) tools',
+        href: 'https://www.cadence.com/en_US/home/tools/custom-ic-analog-rf-design/layout-design/virtuoso-layout-suite.html',
+        icon: import('@/assets/tools/cadence-3.svg?raw')
+      },
+      {
+        name: 'Solidworks',
+        description: '3D CAD (Computer-Aided Design) Software',
+        href: 'https://www.solidworks.com/',
+        icon: import('@/assets/tools/solidworks.svg?raw')
+      }
+    ]}
+  />
+
+  <ToolSection
+    class='mb-5'
+    title='Environment'
+    tools={[
+      {
+        name: 'MacOS Sequoia',
+        description: 'MacBook Air',
+        href: 'https://www.apple.com/macos/',
+        icon: import('@/assets/tools/apple.svg?raw')
+      },
+      {
+        name: 'Windows 11',
+        description: 'AMD Ryzen™ 9 9950X',
+        href: 'https://news.microsoft.com/windows11-general-availability/',
+        icon: import('@/assets/tools/windows11.svg?raw')
+      }
+    ]}
+  />
+
+  {/* social-networks */}
+  <h2 id='social-networks'>Social Networks</h2>
+  <Substats
+    stats={[
+      {
+        platform: 'Linkedin',
+        icon: 'linkedin',
+        link: 'https://www.linkedin.com/in/xili-wang-711369354/',
+        text: 'followers',
+        api: 'github/TimothyWang-Tech'
+      },
+      {
+        platform: 'GitHub',
+        icon: 'github',
+        link: 'https://github.com/TimothyWang-Tech',
+        text: 'followers',
+        api: 'github/TimothyWang-Tech'
+      },
+      
+      {
+        platform: 'zhihu',
+        icon: 'zhihu',
+        link: 'https://zhihu.com/',
+        text: 'followers',
+        api: 'weibo/5501674056'
+      },
+      {
+        platform: 'Bilibili',
+        icon: 'bilibili',
+        link: 'https://www.bilibili.com/',
+        text: 'fans',
+        api: 'steamgames/76561199021278120'
+      }
+    ]}
+  />
+
+  {/* gossips */}
+  <h2 id='gossips'>Gossips</h2>
+  <Collapse title='Who is your favorite singer?'>
+    My favorite singer is <a href="https://www.instagram.com/stefsunyanzi/?hl=en" target="_blank">Stefanie Sun</a> (Yanzi Sun), and the song I love the most is “<a href="https://www.youtube.com/watch?v=zi8z6RPYGV0" target="_blank">Tian Hei Hei</a>” (The Sky is Dark).
+  </Collapse>
+
+  
+
+  <Comment slot='bottom' />
+</PageLayout>
