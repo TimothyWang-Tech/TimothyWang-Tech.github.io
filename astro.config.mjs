@@ -30,7 +30,7 @@ import config from './src/site.config.ts'
 export default defineConfig({
   // Top-Level Options
   site: 'https://TimothyWang-Tech.github.io',
-  base: 'TimothyWang-Tech.github.io',
+  //base: 'TimothyWang-Tech.github.io',
   trailingSlash: 'never',
 
   // Adapter
