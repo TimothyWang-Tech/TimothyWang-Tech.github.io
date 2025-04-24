@@ -28,16 +28,16 @@
       "desc": "Other special links",
       "link_list": [
         {
-          "name": "虫洞",
-          "intro": "随机前往十年之约的成员博客",
-          "link": "https://www.foreverblog.cn/go.html",
-          "avatar": "/images/wormhole.png"
+          "name": "Lu Lab",
+          "intro": "北京大学压电与声学MEMS实验室主页",
+          "link": "http://lulab.pku.edu.cn/",
+          "avatar": "/images/Peking_University_seal.svg"
         },
         {
-          "name": "开往",
-          "intro": "随机前往开往的成员博客",
-          "link": "https://www.travellings.cn/go.html",
-          "avatar": "https://www.travellings.cn/assets/travelling.png"
+          "name": "B. Y.",
+          "intro": "燕博南老师的主页（里面很多数电资料）",
+          "link": "https://bonany.cc/",
+          "avatar": "/images/BYfig.png"
         }
       ]
     }

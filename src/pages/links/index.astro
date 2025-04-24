@@ -18,7 +18,7 @@ const linksConf = config.integ.links
 ---
 
 <PageLayout title='Links' {headings} info='/links'>
-  <p>怎么可能有顺序呢，当然是随机的~</p>
+  <p>The links are placed randomly~</p>
   <h2 id='common-links'>Common Links</h2>
   <FriendList list={friends[0]} />
   <Collapse title='Links with Bad Status'>
@@ -32,7 +32,7 @@ const linksConf = config.integ.links
 
   <!-- apply-links -->
   <h2 id='apply-links'>Apply Links</h2>
-  <p>本站信息如下（点击快速复制）：</p>
+  <p>Site Info ↓ (Click to Copy)</p>
   <blockquote class='not-prose grid grid-cols-[auto_1fr] gap-x-2 break-words border-s-4 ps-4'>
     {
       linksConf.applyTip.map(({ name, val }) => {
@@ -50,15 +50,12 @@ const linksConf = config.integ.links
   </blockquote>
 
   <p>
-    申请时还请按照这个模板留言（<a
-      href='https://github.com/cworld1/astro-theme-pure/blob/main/public/links.json'
-      target='_blank'>提交 PR</a
-    > 或许也是个更快的办法）。此外有关申请说明：
+    Friend Link Application Instructions:（
   </p>
   <ul>
-    <li>在你的友链上添加了本站；</li>
-    <li>请确保你的站点活着；</li>
-    <li>博客内容不违反国家法律。</li>
+    <li>Add this site as one of your friend links.</li>
+    <li>Ensure your site is activated.</li>
+    <li>Contact me via my <a href="mailto:timothy.wxl@gmail.com" target="_blank" data-astro-cid-fwdcsva6="">email</a>.</li>
   </ul>
   <Comment slot='bottom' />
 </PageLayout>
