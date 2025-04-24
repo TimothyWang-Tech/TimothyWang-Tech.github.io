@@ -16,7 +16,7 @@ import config from '@/site-config'
 const headings = [
   { depth: 2, slug: 'publications', text: 'Publications' },
   { depth: 2, slug: 'projects', text: 'Projects' },
-  { depth: 2, slug: 'learnings', text: 'Learnings' },
+  { depth: 2, slug: 'projectsifollow', text: 'Projects I Follow' },
   { depth: 2, slug: 'sponsorship', text: 'Sponsorship' }
 ]
 ---
@@ -118,14 +118,17 @@ const headings = [
   
 
 
-  <h2 id='learnings'>Learnings</h2>
+  <h2 id='projectsifollow'>Projects I follow</h2>
   <ProjectSection
     class='my-2'
     project={[
       {
-        name: 'Rust Learning',
-        description: 'Some notes and code about CWorld learning Rust',
-        links: [{ type: 'github', href: 'https://github.com/cworld1/rust-learning' }]
+        name: 'PHYBench',
+        description: 'Holistic Evaluation of Physical Perception and Reasoning in LLM',
+        links: [{ type: 'github', href: 'https://github.com/phybench-official' },
+        { type: 'site', href: 'https://phybench-official.github.io/phybench-demo/' },
+        { type: 'doc', href: 'https://arxiv.org/pdf/2504.16074' }
+        ]
       },
       {
         name: 'CS 213 Learning',
