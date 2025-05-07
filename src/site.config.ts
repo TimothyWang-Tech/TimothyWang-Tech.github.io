@@ -91,7 +91,7 @@ export const integ: IntegrationUserConfig = {
       { name: 'Name', val: theme.title },
       { name: 'Desc', val: theme.description || 'Null' },
       { name: 'Link', val: 'https://xili.wang/' },
-      { name: 'Avatar', val: 'https://xili.wang/favicon/favicon.ico' }
+      { name: 'Avatar', val: 'https://xili.wang/favicon/favicon.png' }
     ]
   },
   // Enable page search function
