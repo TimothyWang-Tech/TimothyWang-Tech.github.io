@@ -1,23 +1,17 @@
-'use strict'
+// CJK character ranges
+const CJK_RANGES = [
+  [0x4e00, 0x9fff],    // CJK Unified Ideographs
+  [0x3400, 0x4dbf],    // CJK Extension A
+  [0x20000, 0x2a6df],  // CJK Extension B
+  [0x2a700, 0x2b73f],  // CJK Extension C
+  [0x2b740, 0x2b81f],  // CJK Extension D
+  [0x2b820, 0x2ceaf],  // CJK Extension E
+  [0xf900, 0xfaff],    // CJK Compatibility Ideographs
+  [0x2f800, 0x2fa1f]   // CJK Compatibility Ideographs Supplement
+]
 
-/**
- * Checks if a character is a CJK character
- * @param {string} char - The character to check
- * @returns {boolean} - Returns true if the character is CJK, otherwise false
- */
-function isCJK(char: string): boolean {
-  const charCode = char.charCodeAt(0)
-  return (
-    (charCode >= 0x4e00 && charCode <= 0x9fff) || // CJK Unified Ideographs
-    (charCode >= 0x3400 && charCode <= 0x4dbf) || // CJK Unified Ideographs Extension A
-    (charCode >= 0x20000 && charCode <= 0x2a6df) || // CJK Unified Ideographs Extension B
-    (charCode >= 0x2a700 && charCode <= 0x2b73f) || // CJK Unified Ideographs Extension C
-    (charCode >= 0x2b740 && charCode <= 0x2b81f) || // CJK Unified Ideographs Extension D
-    (charCode >= 0x2b820 && charCode <= 0x2ceaf) || // CJK Unified Ideographs Extension E
-    (charCode >= 0xf900 && charCode <= 0xfaff) || // CJK Compatibility Ideographs
-    (charCode >= 0x2f800 && charCode <= 0x2fa1f) // CJK Compatibility Ideographs Supplement
-  )
-}
+// CJK punctuation ranges
+const CJK_PUNCTUATION = /[\u3000-\u303F\uff00-\uffef]/
 
 interface ReadingTimeResult {
   text: string
@@ -26,54 +20,56 @@ interface ReadingTimeResult {
   words: number
 }
 
-/**
- * Calculates the reading time of a text
- * @param {string} text - The text to calculate
- * @param {number} wordsPerMinute - The number of words read per minute, default is 200
- * @returns {ReadingTimeResult} - An object containing the reading time
- */
-export function getReadingTime(text: string, wordsPerMinute: number = 200): ReadingTimeResult {
+function isCJK(char: string): boolean {
+  const code = char.charCodeAt(0)
+  return CJK_RANGES.some(([start, end]) => code >= start && code <= end)
+}
+
+function countWords(text: string): number {
   let words = 0
-  const length = text.length
+  let inWord = false
 
-  // Normalize text by adding a space at the end
-  const normalizedText = text + ' '
-
-  for (let i = 0; i < length; i++) {
-    const char = normalizedText[i]
-
-    // If the character is CJK, count it as a word
+  for (let i = 0; i < text.length; i++) {
+    const char = text[i]
+    
     if (isCJK(char)) {
+      // Each CJK character counts as a word
       words++
-      // Skip subsequent punctuation and whitespace characters
-      while (i < length && (normalizedText[i + 1] === ' ' || isCJK(normalizedText[i + 1]))) {
+      // Skip following CJK punctuation
+      while (i + 1 < text.length && CJK_PUNCTUATION.test(text[i + 1])) {
         i++
       }
-    } else if (char === ' ' || char === '\n' || char === '\r') {
-      // Count the end of a word when encountering whitespace characters
-      if (
-        i > 0 &&
-        normalizedText[i - 1] !== ' ' &&
-        normalizedText[i - 1] !== '\n' &&
-        normalizedText[i - 1] !== '\r'
-      ) {
+      inWord = false
+    } else if (/\S/.test(char)) {
+      // Non-whitespace character in non-CJK text
+      if (!inWord) {
         words++
+        inWord = true
+      }
+    } else {
+      // Whitespace character
+      if (inWord && i + 1 < text.length && /\S/.test(text[i + 1])) {
+        // If next character is non-whitespace, count as new word
+        inWord = false
       }
     }
   }
 
-  // Calculate reading time
+  return words
+}
+
+export function getReadingTime(text: string, wordsPerMinute: number = 200): ReadingTimeResult {
+  const words = countWords(text)
   const minutes = words / wordsPerMinute
-  const time = Math.round(minutes * 60 * 1000) // Convert to milliseconds
+  const time = Math.round(minutes * 60 * 1000)
   const displayed = Math.ceil(minutes)
 
   return {
-    text: displayed + ' min read',
-    minutes: minutes,
-    time: time,
-    words: words
+    text: `${displayed} min read`,
+    minutes,
+    time,
+    words
   }
 }
 
-// Export module
 export default getReadingTime
