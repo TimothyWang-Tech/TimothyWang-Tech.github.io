@@ -13,8 +13,11 @@ import avatar from '@/assets/avatar2.jpg'
 import config from '@/site-config'
 
 const languages = ['Html', 'JavaScript', 'CSS', 'Shell']
-const frontend = ['TypeScript', 'Vite', 'Webpack', 'Astro']
-const backend = ['Vercel', 'Waline']
+const Framework = ['Astro']
+const Theme = ['Astro Theme Pure']
+const Hosting = ['Github Page']
+const Visits = ['Waline', 'Supabase']
+const Follower_statistics = ['Substats']
 
 const MAX_POSTS = 10
 const allPosts = await getBlogCollection()
@@ -213,8 +216,11 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
       <p>
 The personalized customization of this website relies on the resources and technical support provided by the following outstanding projects and service providers:
       </p>
-        <SkillLayout title='Frontend' skills={frontend} />
-        <SkillLayout title='Backend' skills={backend} />
+        <SkillLayout title='Framework' skills={Framework} />
+        <SkillLayout title='Theme' skills={Theme} />
+        <SkillLayout title='Hosting' skills={Hosting} />
+        <SkillLayout title='Visits' skills={Visits} />
+        <SkillLayout title='Follower statistics' skills={Follower_statistics} />
       </Section>
     </div>
     <Quote class='mt-12' />
