@@ -1,0 +1,279 @@
+---
+import PageLayout from '@/layouts/BaseLayout.astro'
+
+const meta = {
+  title: 'MultiMind – Xili\'s App Preview',
+  description: 'Preview of MultiMind app page for macOS.',
+}
+
+// 图片资源请根据实际替换路径
+const screenshots = [
+  '/images/appgemeni.png',
+  '/images/appclip0.png',
+  '/images/appclip.png',
+  '/images/appgpt.png',
+  '/images/appmanus.png',
+  '/images/appper.png',
+  '/images/appclaude.png',
+  '/images/appds.png',
+]
+---
+{/* NOTE FOR DARK MODE: 
+  The `dark:` classes used below require dark mode to be enabled in your `tailwind.config.js` file.
+  Example: `darkMode: 'class'`
+*/}
+<PageLayout {meta}>
+  {/* Container width increased to max-w-5xl to make separators longer while keeping left alignment */}
+  <main class="mt-6 lg:mt-10 max-w-5xl mx-auto px-4 w-full text-left text-gray-800 dark:text-gray-200">
+    <!-- Section: Xili's App Store Preview -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">
+        Xili's App <span class="text-gray-400 dark:text-gray-500">Preview</span>
+      </h2>
+    </section>
+
+    <hr class="mt-3 mb-10 border-gray-300 dark:border-gray-700" />
+
+    <!-- Section: App Info -->
+    <section class="flex items-center gap-x-10">
+      <img src="/images/multimind.png" alt="MultiMind App Icon" class="w-42 h-42 rounded-[22%] border border-gray-200 dark:border-gray-700 object-cover flex-shrink-0" />
+      <div>
+        <h1 class="text-2xl font-bold text-black dark:text-white">
+          MultiMind
+          <span class="text-xl font-normal text-gray-400 dark:text-gray-500 ml-1">4+</span>
+        </h1>
+        <p class="text-lg text-gray-500 dark:text-gray-400 mt-1">Developer Tools</p>
+        <a href="#" class="text-lg text-blue-500 dark:text-blue-400 hover:underline mt-1 block">Xili Wang</a>
+        <a
+          href="#"
+          id="download-btn"
+          class="inline-block bg-blue-500 text-white font-bold py-2 px-8 rounded-full mt-4 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 transition-colors duration-200"
+        >
+          Download
+        </a>
+        <script type="text/javascript" is:inline>
+          document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('download-btn');
+            if (!btn) return;
+            btn.addEventListener('click', (e) => {
+              e.preventDefault();
+              const ua = window.navigator.userAgent.toLowerCase();
+              const winLink = "https://github.com/TimothyWang-Tech/MultiMind/releases/download/v1.3.0-win/MultiMind.Setup.1.3.0.exe";
+              const macLink = "https://github.com/TimothyWang-Tech/MultiMind/releases/download/v1.3.0/MultiMind-1.3.0-arm64.dmg";
+              if (ua.includes('macintosh') || ua.includes('mac os x')) {
+                window.open(macLink, '_blank');
+              } else if (ua.includes('windows')) {
+                window.open(winLink, '_blank');
+              } else {
+                // 其他系统，弹窗提示
+                alert('Currently only macOS and Windows downloads are available.');
+              }
+            });
+          });
+        </script>
+      </div>
+    </section>
+
+    <hr class="my-10 border-gray-300 dark:border-gray-700" />
+
+    <!-- Section: Screenshots Slider -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">Screenshots</h2>
+      {/* This container uses native CSS scrolling.
+        - `flex` and `overflow-x-auto` create the scrollable area.
+        - `snap-x` and `snap-mandatory` enable snapping behavior.
+        - `space-x-4` adds gaps between images.
+        - `custom-scrollbar` class is for styling the scrollbar (see <style> tag below).
+      */}
+      <div class="flex overflow-x-auto snap-x snap-mandatory space-x-4 pb-4 custom-scrollbar">
+        {screenshots.map((src) => (
+          // `snap-start` makes each image a snapping point.
+          // `flex-shrink-0` prevents images from shrinking.
+          <div class="snap-start flex-shrink-0 w-full md:w-[48%] lg:w-[32%]">
+            <img
+              src={src}
+              alt="Screenshot"
+              class="w-full h-auto rounded-md border border-gray-200 dark:border-gray-700"
+            />
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <hr class="my-10 border-gray-300 dark:border-gray-700" />
+
+    <!-- Section: Detail Description -->
+    <section class="my-10">
+      <b>Boost your productivity with a unified AI workspace</b><br/>
+      This app brings together multiple AI web platforms—previously only available in browsers—into one clean, convenient desktop experience. No need to juggle tabs or switch windows. You can switch effortlessly between models, use their individual strengths, and handle different parts of a complex task with ease.<br/>
+      <br/>
+      Key Feature: Temporary Clipboard. Drag any AI response—or your own input—into the built-in clipboard to save it temporarily. Tap to copy and reuse instantly. It’s perfect for connecting ideas across different AIs, helping you stay focused and organized while working.<br/>
+      <br/>
+      Whether you’re writing, coding, researching, or brainstorming, this app helps you unlock the full potential of multiple AI tools—seamlessly, all in one place.
+    
+    <br/>
+    <br/>
+    <span id="zh-toggle" class="text-blue-500 cursor-pointer select-none hover:underline">中文介绍</span>
+    <div id="zh-content" style="display:none; margin-top: 0.5em;">
+      <b>统一 AI 工作空间，效率翻倍</b><br/>
+      本应用将多个仅提供网页版的 AI 平台整合到一个桌面应用中，界面简洁，操作便捷。无需来回切换浏览器网页，轻松在不同模型间切换，灵活运用各自优势，处理复杂任务更加高效。<br/>
+      <br/>
+      亮点功能：临时剪切板。你可以将 AI 的回答或自己的输入拖入内置的临时剪切板中暂存，点击即可快速复制。便于在多个 AI 间传递信息，保持思路连贯，不打断工作流。<br/>
+      <br/>
+      无论是写作、编程、研究还是灵感整理，这款应用都能帮你发挥多个 AI 模型的合力优势，一站式完成所有工作。
+    </div>
+    <script type="text/javascript" is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        const toggle = document.getElementById('zh-toggle');
+        const content = document.getElementById('zh-content');
+        if (!toggle || !content) return;
+        toggle.addEventListener('click', () => {
+          if (content.style.display === 'none') {
+            content.style.display = 'block';
+            toggle.style.display = 'none';
+          }
+        });
+      });
+    </script>
+    
+    
+    
+    
+    </section>
+
+    <hr class="my-10 border-gray-300 dark:border-gray-700" />
+
+    <!-- Section: What's New -->
+    <section class="my-10">
+        <h2 class="text-2xl font-semibold mb-4">What’s New</h2>
+        <p class="mb-2 font-medium">Version 1.3.0</p>
+        <ul class="list-disc list-inside space-y-1">
+            <li>Added support for Windows systems</li>
+            <li>Implemented a temporary clipboard feature</li>
+        </ul>
+    </section>
+
+    <hr class="my-10 border-gray-300 dark:border-gray-700" />
+
+    <!-- Section: App Privacy -->
+    <section>
+        <h2 class="text-2xl font-semibold mb-4">App Privacy</h2>
+        <ul class="list-disc list-inside space-y-1">
+            <li>No personal data is collected (the code is open source and available for inspection).</li>
+            <li>All login and user data stays on your device.</li>
+            <li>Clipboard data is only stored locally.</li>
+        </ul>
+    </section>
+
+    <hr class="my-10 border-gray-300 dark:border-gray-700" />
+
+    <!-- Section: Information -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4">Information</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
+        <div>
+          <dt class="font-medium text-gray-900 dark:text-white">Developer</dt>
+          <dd class="text-gray-500 dark:text-gray-400">Xili Wang</dd>
+        </div>
+        <div>
+          <dt class="font-medium text-gray-900 dark:text-white">Size</dt>
+          <dd class="text-gray-500 dark:text-gray-400">262.7 MB</dd>
+        </div>
+        <div>
+          <dt class="font-medium text-gray-900 dark:text-white">Category</dt>
+          <dd class="text-gray-500 dark:text-gray-400">Developer Tools</dd>
+        </div>
+        <div>
+          <dt class="font-medium text-gray-900 dark:text-white">Compatibility</dt>
+          <dd class="text-gray-500 dark:text-gray-400">
+            <b>Mac</b> arm64 & macOS 15.3 or later.<br/>
+            <b>Win</b> x64 architecture & Windows 11.<br/>
+          </dd>
+        </div>
+        <div>
+          <dt class="font-medium text-gray-900 dark:text-white">Languages</dt>
+          <dd class="text-gray-500 dark:text-gray-400">中文</dd>
+        </div>
+        <div>
+          <dt class="font-medium text-gray-900 dark:text-white">Age Rating</dt>
+          <dd class="text-gray-500 dark:text-gray-400">4+</dd>
+        </div>
+        <div>
+          <dt class="font-medium text-gray-900 dark:text-white">Copyright</dt>
+          <dd class="text-gray-500 dark:text-gray-400">Copyright © Xili Wang. All rights reserved.</dd>
+        </div>
+        <div>
+          <dt class="font-medium text-gray-900 dark:text-white">Price</dt>
+          <dd class="text-gray-500 dark:text-gray-400">Free</dd>
+        </div>
+      </div>
+    </section>
+  </main>
+</PageLayout>
+
+<script>
+  // Client-side script for the screenshot slider
+  document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.getElementById('screenshot-slider');
+    if (!slider) return;
+
+    const track = slider.querySelector('#slider-track');
+    const prevBtn = slider.querySelector('#prev-btn');
+    const nextBtn = slider.querySelector('#next-btn');
+    const slides = Array.from(track.children);
+    
+    if (!track || !prevBtn || !nextBtn || slides.length === 0) return;
+
+    let currentIndex = 0;
+    let slideWidth = slides[0].getBoundingClientRect().width;
+    
+    const getVisibleSlides = () => {
+      if (window.innerWidth >= 1024) return 3; // lg
+      if (window.innerWidth >= 768) return 2;  // md
+      return 1;
+    };
+    
+    let visibleSlides = getVisibleSlides();
+
+    const updateSliderPosition = () => {
+      track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+      updateButtonStates();
+    };
+    
+    const updateButtonStates = () => {
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = currentIndex >= slides.length - visibleSlides;
+      
+      prevBtn.style.opacity = prevBtn.disabled ? '0.3' : '1';
+      nextBtn.style.opacity = nextBtn.disabled ? '0.3' : '1';
+    };
+
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex < slides.length - visibleSlides) {
+        currentIndex++;
+        updateSliderPosition();
+      }
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateSliderPosition();
+      }
+    });
+
+    // Adjust slider on window resize
+    window.addEventListener('resize', () => {
+      slideWidth = slides[0].getBoundingClientRect().width;
+      visibleSlides = getVisibleSlides();
+      // Clamp currentIndex to new valid range
+      if (currentIndex > slides.length - visibleSlides) {
+        currentIndex = slides.length - visibleSlides;
+      }
+      updateSliderPosition();
+    });
+
+    // Initial setup
+    updateSliderPosition();
+  });
+</script>
