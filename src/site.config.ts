@@ -3,7 +3,7 @@ import type { CardListData, Config, IntegrationUserConfig, ThemeUserConfig } fro
 export const theme: ThemeUserConfig = {
   // === Basic configuration ===
   /** Title for your website. Will be used in metadata and as browser tab title. */
-  title: 'Xili\'s site',
+  title: 'Xili\'s Site',
   /** Will be used in index page & copyright declaration */
   author: 'Xili Wang',
   /** Description metadata for your website. Can be used in page metadata. */
@@ -83,8 +83,11 @@ export const integ: IntegrationUserConfig = {
   links: {
     // Friend logbook
     logbook: [
+      { date: '2025-08-17', content: 'Renko6626 Personal Website' },
+      { date: '2025-04-25', content: 'B. Y. Site' },
       { date: '2025-04-25', content: 'Arthals\' ink' },
-      { date: '2025-04-25', content: 'CWorld Site' }
+      { date: '2025-04-25', content: 'CWorld Site' },
+      { date: '2020-02-15', content: 'LemonPig\'s Blog' },
     ],
     // Yourself link info
     applyTip: [
