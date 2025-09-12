@@ -1,6 +1,6 @@
 ---
 import { Comment } from 'astro-pure/advanced'
-import { Button, Collapse, Spoiler, Timeline } from 'astro-pure/user'
+import { Button, Collapse, Spoiler, Timeline , Card, Icon, Label} from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
 import Substats from '@/components/about/Substats.astro'
 import ToolSection from '@/components/about/ToolSection.astro'
@@ -104,13 +104,13 @@ const headings = [
   <Button title='Sponsor Me' class='w-fit' href='/projects#sponsorship' style='ahead' />
   */}
 
-  <h2 id='projects'>Projects</h2>
+  <h2 id='projects'>Selected Projects</h2>
   <div class="about-text">
   <p>
-  Please visit my
+  For more projects, please visit my
   <a href="/projects" data-astro-cid-fwdcsva6="">projects page</a>!
   </p>
-  </div>
+  </div>  
   <style>
   .about-text {
     font-size: 16px; /* 文字大小 */
@@ -125,7 +125,27 @@ const headings = [
   .about-text a:hover {
     text-decoration: underline; /* 鼠标悬停时显示下划线 */
   }
-</style>
+  </style>
+  <Card
+        as='a'
+        heading='A Bandwidth-tunable Array of Piezoelectric micromachined Ultrasonic Transducers with Various DC Bias Voltage Combinations'
+        href='https://ieeexplore.ieee.org/abstract/document/11109656'
+      >
+
+        <p><u>Xili Wang,</u> Yufeng Gao, Aocheng Bao, Chenyuan Zhang and Yipeng Lu
+        </p> 
+        <p> 
+        </p>
+        <p> 
+        </p>
+        <p> 
+        </p>
+        <p> 
+        </p>
+        <em>The 23rd International Conference on Solid-State Sensors, Actuators and Microsystems (Transducers), Orlando, Florida, USA, 2025</em>
+       
+    </Card>
+
 
   <h2 id='education'>Education</h2>
   <Timeline
@@ -300,7 +320,7 @@ const headings = [
   {/* gossips */}
   <h2 id='gossips'>Gossips</h2>
   <Collapse title='Who is your favorite singer?'>
-    My favorite singer is <a href="https://www.makemusic.sg/" target="_blank">Stefanie Sun</a> (Yanzi Sun), and the song I love the most is “<a href="https://www.youtube.com/watch?v=zi8z6RPYGV0" target="_blank">Tian Hei Hei</a>” (The Sky is Dark).
+    My favorite singer is <a href="https://www.makemusic.sg/" target="_blank">Stefanie Sun</a> (Yanzi Sun), and the song I love the most is “<a href="https://www.youtube.com/watch?v=zi8z6RPYGV0" target="_blank">Cloudy Day</a>” (The Sky is Dark).
   </Collapse>
 
   
