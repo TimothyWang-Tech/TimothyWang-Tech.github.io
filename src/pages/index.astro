@@ -72,10 +72,13 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
       <Section title='About'>
         <p class='text-muted-foreground'>Undergraduate / Reseacher</p>
         <p class='text-muted-foreground'>
-          Hi there! 👋 I'm Xili Wang (王熙理), an undergraduate student at the School of EECS, Peking University, majoring in Applied Physics (Experimental Class of Electronic Information Science). 
+          Hi there! 👋 I'm Xili Wang (王熙理), an undergraduate student at the <a href="https://eecs.pku.edu.cn/xxkxjsxy/Home/HOME.htm" target="_blank" 
+            class="text-[#2ca5e0] hover:underline">School of EECS</a>, Peking University, majoring in Applied Physics (Experimental Class of Electronic Information Science). 
         </p>
         <p class='text-muted-foreground'>
-        I have a passion for the field of Piezoelectric and Acoustic Microelectromechanical Systems (MEMS) and I am currently supervised by Prof. Yipeng Lu at the School of Integrated Circuit, Peking University.
+        I have a passion for the field of Piezoelectric and Acoustic Microelectromechanical Systems (MEMS) and I am currently supervised by <a href="http://lulab.pku.edu.cn/" target="_blank" 
+            class="text-[#2ca5e0] hover:underline">Prof. Yipeng Lu </a>at the <a href="https://ic.pku.edu.cn/en/" target="_blank" 
+            class="text-[#2ca5e0] hover:underline">School of Integrated Circuit</a>, Peking University.
         </p>
         <p class='text-muted-foreground'>
       My research interests include the design, fabrication and characterization of piezoelectric micromachined ultrasonic transducers (PMUTs) and analog/mixed-signal integrated circuits design.
@@ -84,6 +87,93 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
       {/*<Button title='More about me' class='w-fit self-end' href='/about' style='ahead' />*/}
       <Button title='More about me' class='w-fit self-front' href='/about' style='ahead' />
       </Section>
+
+
+      <Section title='News'>
+        <div class='news-container overflow-y-scroll max-h-54'>
+          <ul class='news-list pl-0'>
+            <li class='text-muted-foreground mb-2'><b>[2025/12]</b> Win <b>Huanyu Research Scholarship</b> for excellent undergraduate students at EECS, Peking University!🏆</li>
+            
+
+            <li class='text-muted-foreground mb-2'><b>[2025/12]</b> One paper accepted at <b>Nature Microsystems & Nanoengineering</b>: <a href="https://www.nature.com/articles/s41378-025-01096-x"  target="_blank" 
+            class="text-[#2ca5e0] hover:underline" >High Frame Rate Ultrasonic Flowmeter Based on PMUT Array with Bidirectional Acoustic Beams</a>!🎉</li>
+            
+            <li class='text-muted-foreground mb-2'><b>[2025/10]</b> One paper accepted at <b>IEEE MEMS 2026</b>: <a href="https://mems26.org/files/MEMS2026_Program.pdf" target="_blank" 
+            class="text-[#2ca5e0] hover:underline" '>Multi-beam Ultrasonic Transmission from a Single Channel PMUT Array with Cosine-apodized Amplitude Modulation via Various Top Electrode Areas</a>. See you in Salzburg!🎉</li>
+            
+            <li class='text-muted-foreground mb-2'><b>[2025/09]</b> Win <b>Yanbao Scholarship</b> at Peking University!🏆</li>
+            
+            <li class='text-muted-foreground mb-2'><b>[2025/02]</b> One paper accepted at <b>Transducers 2025</b>: <a href="https://ieeexplore.ieee.org/abstract/document/11109656" target="_blank" 
+            class="text-[#2ca5e0] hover:underline" '>A Bandwidth-tunable Array of Piezoelectric micromachined Ultrasonic Transducers with Various DC Bias Voltage Combinations</a>. See you in Orlando!🎉</li>
+             
+            <li class='text-muted-foreground mb-2'><b>[2024/11]</b> Win <b>Experimental Class of Electronic Information Science Academic Scholarship</b> at EECS, Peking University!🏆</li>
+            
+          </ul>
+        </div>
+      </Section>
+
+      <Section title='Selected<br/>Publications'>
+      <Card
+        as='a'
+        heading='Multi-beam Ultrasonic Transmission from a Single Channel PMUT Array with Cosine-apodized Amplitude Modulation via Various Top Electrode Areas'
+        href='https://mems26.org/files/MEMS2026_Program.pdf'
+      >
+
+        <p><u>Xili Wang,</u> Jinghan Gan, Yufeng Gao, Kai Yang, Lei Zhao, Bowen Sheng and Yipeng Lu
+        </p> 
+        <p> 
+        </p>
+        <p> 
+        </p>
+        <p> 
+        </p>
+        <p> 
+        </p>
+        <em>The 39th International Conference on Micro Electro Mechanical Systems (IEEE MEMS 2026), Salzburg, Austria, 2026</em>
+      </Card>
+      <Card
+        as='a'
+        heading='A Bandwidth-tunable Array of Piezoelectric micromachined Ultrasonic Transducers with Various DC Bias Voltage Combinations'
+        href='https://ieeexplore.ieee.org/abstract/document/11109656'
+      >
+
+        <p><u>Xili Wang,</u> Yufeng Gao, Aocheng Bao, Chenyuan Zhang and Yipeng Lu
+        </p> 
+        <p> 
+        </p>
+        <p> 
+        </p>
+        <p> 
+        </p>
+        <p> 
+        </p>
+        <em>The 23rd International Conference on Solid-State Sensors, Actuators and Microsystems (Transducers), Orlando, Florida, USA, 2025</em>
+       
+      </Card>
+      <Card
+        as='a'
+        heading='High Frame Rate Ultrasonic Flowmeter Based on PMUT Array with Bidirectional Acoustic Beams'
+        href='https://www.nature.com/articles/s41378-025-01096-x'
+      >
+
+        <p>Yufeng Gao, <u>Xili Wang,</u> Lei Zhao, AochengBao, Chong Yang, Ziyi Liang, Bowen Sheng and Yipeng Lu
+        </p>
+        <p>
+        </p>
+        <p>
+        </p>
+        <p>
+        </p>
+        <p> 
+        </p>
+        <em>Nature Microsystems & Nanoengineering volume 11, Article number: 245 (2025)</em>
+       
+      </Card>
+      <Button title='More about Publications' class='w-fit self-front' href='/projects' style='ahead' />
+      
+
+      </Section>
+
 
       <Section title='Education'>
       <Card
@@ -126,51 +216,6 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
       </Card>
 
       </Section>
-
-      <Section title='Selected<br/>Publications'>
-      <Card
-        as='a'
-        heading='A Bandwidth-tunable Array of Piezoelectric micromachined Ultrasonic Transducers with Various DC Bias Voltage Combinations'
-        href='https://ieeexplore.ieee.org/abstract/document/11109656'
-      >
-
-        <p><u>Xili Wang,</u> Yufeng Gao, Aocheng Bao, Chenyuan Zhang and Yipeng Lu
-        </p> 
-        <p> 
-        </p>
-        <p> 
-        </p>
-        <p> 
-        </p>
-        <p> 
-        </p>
-        <em>The 23rd International Conference on Solid-State Sensors, Actuators and Microsystems (Transducers), Orlando, Florida, USA, 2025</em>
-       
-      </Card>
-      <Card
-        as='a'
-        heading='Real-Time Differential Ultrasonic Flow Sensing Enabled by PMUT Phased Array with a Novel V-Shaped Beam Pattern'
-        href='https://ieeexplore.ieee.org/document/10917774'
-      >
-
-        <p>Yufeng Gao, <u>Xili Wang,</u> Lei Zhao and Yipeng Lu
-        </p>
-        <p>
-        </p>
-        <p>
-        </p>
-        <p>
-        </p>
-        <p> 
-        </p>
-          <em>2025 IEEE 38th International Conference on Micro Electro Mechanical Systems (MEMS), Kaohsiung, Taiwan, 2025</em>
-       
-      </Card>
-      <Button title='More about Publications' class='w-fit self-front' href='/projects' style='ahead' />
-      
-
-      </Section>
-
       
 
 {/*
@@ -260,7 +305,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
         />
       </Section>
       */}
-
+{/*
       <Section title='This site'>
       <p>
 The personalized customization of this website relies on the resources and technical support provided by the following outstanding projects and service providers:
@@ -271,7 +316,11 @@ The personalized customization of this website relies on the resources and techn
         <SkillLayout title='Visits' skills={Visits} />
         <SkillLayout title='Follower statistics' skills={Follower_statistics} />
       </Section>
+*/}
+
+
     </div>
+    
     <Quote class='mt-12' />
   </main>
 </PageLayout>
