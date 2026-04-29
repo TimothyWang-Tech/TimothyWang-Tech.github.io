@@ -36,9 +36,15 @@
         },
         {
           "name": "QianXu Wang's Personal Website",
-          "intro": "QianXu Wang的个人主页",
+          "intro": "The world obeys buoyancy: release tension, gain support.",
           "link": "https://jairitage.github.io",
-          "avatar": "https://jairitage.github.io/bio.jpg"
+          "avatar": "https://jairitAge.github.io/links-avatar.jpg"
+        },
+        {
+          "name": "Diandian GU",
+          "intro": "I find this website very helpful 👍",
+          "link": "https://diandiangu.github.io/2022/01/10/techniques/",
+          "avatar": "/images/diandian.jpeg"
         }
       ]
     },
@@ -56,12 +62,6 @@
           "intro": "北京大学压电与声学MEMS实验室主页",
           "link": "http://lulab.pku.edu.cn/",
           "avatar": "/images/Peking_University_seal.svg"
-        },
-        {
-          "name": "Diandian GU",
-          "intro": "I find this website very helpful 👍",
-          "link": "https://diandiangu.github.io/2022/01/10/techniques/",
-          "avatar": "/images/diandian.jpeg"
         }
       ]
     }
